@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+[v-cloak] {
+    display: none;
+}
+
 .container {
     height: 100vh;
     display: flex;
