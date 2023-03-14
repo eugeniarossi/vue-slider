@@ -59,6 +59,6 @@ createApp({
         }
     },
     mounted() {
-        this.autoplay();
+        this.autoplay;
     }
 }).mount('#app');
