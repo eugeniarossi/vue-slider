@@ -14,7 +14,7 @@
     <div id="app">
 
         <div class="container" v-cloak>
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" tabindex="0" v-on:mouseover="stopAutoplay" v-on:mouseleave="autoplay">
 
                 <div class="item">
                     <img :src="slides[active].image" alt="titles[active]"/>

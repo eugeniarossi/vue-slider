@@ -6,6 +6,7 @@ createApp({
     data() {
         return {
             active : 0,
+            sliderOver: false,
             slides : [
                 {
                     image: 'img/01.webp',
@@ -30,7 +31,8 @@ createApp({
                 }
             ],
             titles : ['Spiderman', 'Ratchet & Clank', 'Fortnite', 'Stray', 'Avengers'],
-            pContent : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.'
+            pContent : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+            interval: setInterval(this.nextImg, 2000)
         }
     },
     methods: {
@@ -48,9 +50,15 @@ createApp({
         },
         selectImage(index) {
             this.active = index;
+        },
+        autoplay() {
+            this.interval;
+        },
+        stopAutoplay() {
+            clearInterval(this.interval);
         }
     },
     mounted() {
-        setInterval(this.nextImg, 3000);
+        this.autoplay();
     }
 }).mount('#app');
