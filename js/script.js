@@ -31,8 +31,7 @@ createApp({
                 }
             ],
             titles : ['Spiderman', 'Ratchet & Clank', 'Fortnite', 'Stray', 'Avengers'],
-            pContent : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
-            interval: setInterval(this.nextImg, 2000)
+            pContent : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.'
         }
     },
     methods: {
@@ -51,14 +50,18 @@ createApp({
         selectImage(index) {
             this.active = index;
         },
-        autoplay() {
-            this.interval;
-        },
         stopAutoplay() {
-            clearInterval(this.interval);
+            this.sliderOver = true;
+        },
+        autoplay() {
+            this.sliderOver = false;
         }
     },
     mounted() {
-        this.autoplay;
+        setInterval(() => {
+            if(this.sliderOver === false) {
+                this.nextImg();
+            }
+        }, 3000);
     }
 }).mount('#app');
